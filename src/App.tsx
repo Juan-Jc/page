@@ -10,7 +10,7 @@ import { ThemeToggle } from './components/ThemeToggle';
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen w-full overflow-hidden flex items-center justify-center p-4 md:p-8 transition-colors duration-300">
+      <div className="min-h-screen w-full overflow-hidden flex items-center justify-center p-4 md:p-8 bg-[#1a1425] dark:bg-[#1a1425] light:bg-[#f8fafc] transition-colors duration-300">
         {/* Toggle Button */}
         <div className="fixed top-4 right-4 z-50">
           <ThemeToggle />
