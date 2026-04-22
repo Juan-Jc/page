@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #1a1425;
+  --color-dark-card: rgba(255, 255, 255, 0.05);
+  --color-dark-text: #ffffff;
+  --color-dark-muted: #9ca3af;
+
+  --color-light-bg: #f8fafc;
+  --color-light-card: rgba(0, 0, 0, 0.05);
+  --color-light-text: #1a1425;
+  --color-light-muted: #6b7280;
+
+  --shadow-neon: 0 0 20px var(--neon-color);
+  --shadow-neon-lg: 0 0 40px var(--neon-color);
+
+  --blur-glass: 16px;
+  --radius-glass: 1.5rem;
+}
+
+@layer base {
+  :root {
+    --neon-color: #a855f7;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    position: relative;
+    border-radius: var(--radius-glass);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(var(--blur-glass));
+    border: 2px solid var(--neon-color);
+    box-shadow: var(--shadow-neon), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 64rem;
+  }
+
+  .carousel-container:hover .animate-carousel {
+    animation-play-state: paused;
+  }
+}
+
+/* Tech Carousel Animation */
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel 30s linear infinite;
+}
+
+.carousel-container {
+  overflow: hidden;
+  padding: 1rem 0;
+  position: relative;
+}
