@@ -2,16 +2,14 @@
 
 @theme {
   --color-dark-bg: #1a1425;
-  --color-dark-card: rgba(255, 255, 255, 0.08);
-  --color-dark-text: #f8fafc;
+  --color-dark-card: rgba(255, 255, 255, 0.05);
+  --color-dark-text: #ffffff;
   --color-dark-muted: #9ca3af;
 
   --color-light-bg: #f8fafc;
-  --color-light-card: rgba(0, 0, 0, 0.06);
+  --color-light-card: rgba(0, 0, 0, 0.05);
   --color-light-text: #1a1425;
   --color-light-muted: #6b7280;
-
-  --color-neon-border: var(--neon-color);
 
   --shadow-neon: 0 0 20px var(--neon-color);
   --shadow-neon-lg: 0 0 40px var(--neon-color);
@@ -25,18 +23,9 @@
     --neon-color: #a855f7;
   }
 
-  html.dark {
-    color-scheme: dark;
-  }
-
-  html.light {
-    color-scheme: light;
-  }
-
   body {
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   #root {
@@ -53,22 +42,13 @@
   .glass-card {
     position: relative;
     border-radius: var(--radius-glass);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(var(--blur-glass));
     border: 2px solid var(--neon-color);
-    box-shadow: var(--shadow-neon), inset 0 0 30px rgba(255, 255, 255, 0.03);
+    box-shadow: var(--shadow-neon), inset 0 0 20px rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     width: 100%;
     max-width: 64rem;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  html.dark .glass-card {
-    background: var(--color-dark-card);
-  }
-
-  html.light .glass-card {
-    background: var(--color-light-card);
-    box-shadow: var(--shadow-neon), inset 0 0 30px rgba(0, 0, 0, 0.02);
   }
 
   .carousel-container:hover .animate-carousel {
@@ -94,17 +74,4 @@
   overflow: hidden;
   padding: 1rem 0;
   position: relative;
-}
-
-/* Theme transitions */
-html {
-  transition: background-color 0.3s ease;
-}
-
-html.dark {
-  background-color: #1a1425;
-}
-
-html.light {
-  background-color: #f8fafc;
 }

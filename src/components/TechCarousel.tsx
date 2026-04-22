@@ -1,11 +1,6 @@
 import { techs } from '../data/techs';
-import { useTheme } from '../context/ThemeContext';
 
 export function TechCarousel() {
-  const { theme } = useTheme();
-  const isDark = theme === 'dark';
-  const textColor = isDark ? 'text-gray-400' : 'text-gray-500';
-
   // Duplicate icons for seamless loop
   const duplicatedTechs = [...techs, ...techs];
 
@@ -23,7 +18,7 @@ export function TechCarousel() {
               alt={tech.name}
               className="w-10 h-10 md:w-12 md:h-12 object-contain"
             />
-            <span className={`text-xs ${textColor}`}>{tech.name}</span>
+            <span className="text-xs text-gray-400">{tech.name}</span>
           </div>
         ))}
       </div>

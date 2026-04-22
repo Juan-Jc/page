@@ -23,7 +23,7 @@ function App() {
             <ProfileSection />
 
             {/* Tech Carousel */}
-            <div className="border-t border-b py-2 border-inherit opacity-30">
+            <div className="border-t border-b border-white/[0.10] py-2">
               <TechCarousel />
             </div>
 
@@ -31,7 +31,7 @@ function App() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Projects Section */}
               <div>
-                <h2 className="text-lg font-semibold mb-3 text-center lg:text-left">
+                <h2 className="text-lg font-semibold text-white mb-3 text-center lg:text-left">
                   Proyectos Destacados
                 </h2>
                 <ProjectsGrid />
@@ -40,13 +40,13 @@ function App() {
               {/* Social + Audiovisual */}
               <div className="flex flex-col gap-4">
                 <div>
-                  <h2 className="text-lg font-semibold mb-3 text-center lg:text-left">
+                  <h2 className="text-lg font-semibold text-white mb-3 text-center lg:text-left">
                     Conectar
                   </h2>
                   <SocialLinks />
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold mb-3 text-center lg:text-left">
+                  <h2 className="text-lg font-semibold text-white mb-3 text-center lg:text-left">
                     Audiovisual
                   </h2>
                   <AudiovisualSection />
