@@ -1,14 +1,11 @@
 import {
-  createContext,
-  useContext,
   useEffect,
   useState,
   useCallback,
   type ReactNode,
 } from 'react';
-import type { Theme, ThemeContextValue } from '../types';
-
-const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
+import type { Theme } from '../types';
+import { ThemeContext } from './theme-context';
 
 const STORAGE_KEY_THEME = 'portfolio-theme';
 const STORAGE_KEY_NEON = 'portfolio-neon-color';
@@ -34,8 +31,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');
+      root.classList.remove('light');
     } else {
       root.classList.remove('dark');
+      root.classList.add('light');
     }
     localStorage.setItem(STORAGE_KEY_THEME, theme);
   }, [theme]);
@@ -58,12 +57,4 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       {children}
     </ThemeContext.Provider>
   );
-}
-
-export function useTheme() {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
 }

@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import type { CSSProperties, ReactNode } from 'react';
+import { useTheme } from '../context/useTheme';
 
 interface GlassCardProps {
   children: ReactNode;
@@ -12,7 +12,7 @@ export function GlassCard({ children, className = '' }: GlassCardProps) {
   return (
     <div
       className={`glass-card ${className}`}
-      style={{ '--neon-color': neonColor } as React.CSSProperties}
+      style={{ '--neon-color': neonColor } as CSSProperties}
     >
       {children}
     </div>

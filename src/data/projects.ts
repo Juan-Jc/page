@@ -4,48 +4,25 @@ export const projects: Project[] = [
   {
     name: 'Animationland',
     description:
-      'Práctica de animación y dibujo en CSS del curso de animación de Platzi. Integré un contador y event listener con JavaScript para detener los conejos.',
-    language: 'HTML',
-    stars: 1,
+      'Experimento interactivo con animaciones CSS y lógica en JavaScript para controlar eventos dentro de una escena ilustrada.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
     url: 'https://github.com/Juan-Jc/Animationland',
+    highlight: 'Animación + interacción en una sola experiencia.',
   },
   {
     name: 'Avocado-Store',
     description:
-      'Página creada en el curso de manipulación del DOM. Aprendí a crear nodos, enriquecerlos con información de una API, y usar la API de internacionalización.',
-    language: 'JavaScript',
-    stars: 1,
+      'Tienda dinámica conectada a una API pública, con renderizado de nodos, manejo de eventos e internacionalización del contenido.',
+    stack: ['JavaScript', 'DOM API', 'i18n'],
     url: 'https://github.com/Juan-Jc/Avocado-Store',
+    highlight: 'Consumo de API y renderizado dinámico del contenido.',
   },
   {
-    name: 'Blog-Personal',
+    name: 'Mobile First Crypto Landing',
     description:
-      'Emulamos la vista de un blog que conecta sus páginas entre sí con redirecciones, con imágenes y textos de prueba.',
-    language: 'HTML',
-    stars: 1,
-    url: 'https://github.com/Juan-Jc/Blog-Personal',
-  },
-  {
-    name: 'Google-clone',
-    description: 'Clon visual de la página inicial de Google en HTML y CSS.',
-    language: 'CSS',
-    stars: 1,
-    url: 'https://github.com/Juan-Jc/Google-clone',
-  },
-  {
-    name: 'Mobile-First',
-    description:
-      'Proyecto de desarrollo enfocado a la vista en dispositivos móviles. Simulamos una página de criptomonedas.',
-    language: 'CSS',
-    stars: 1,
+      'Landing responsive orientada a mobile con foco en jerarquía visual, legibilidad y adaptación progresiva a pantallas mayores.',
+    stack: ['HTML', 'CSS', 'Responsive Design'],
     url: 'https://github.com/Juan-Jc/Mobile-First',
-  },
-  {
-    name: 'Simon-dice-game',
-    description:
-      'Juego desarrollado en un solo archivo integrando HTML, CSS y JavaScript.',
-    language: 'HTML',
-    stars: 1,
-    url: 'https://github.com/Juan-Jc/Simon-dice-game',
+    highlight: 'Diseño mobile-first aplicado a una landing completa.',
   },
 ];

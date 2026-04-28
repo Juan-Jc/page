@@ -1,23 +1,22 @@
 import { Sun, Moon, Palette } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/useTheme';
 import { NEON_COLORS } from '../types';
 
 export function ThemeToggle() {
   const { theme, neonColor, toggleTheme, setNeonColor } = useTheme();
 
   return (
-    <div className="flex items-center gap-3">
-      {/* Color Picker */}
+    <div className="flex flex-wrap items-center justify-end gap-3 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-card-muted)] px-3 py-2 backdrop-blur-xl">
       <div className="flex items-center gap-2">
-        <Palette className="w-4 h-4 text-gray-400" />
+        <Palette className="h-4 w-4 text-[color:var(--color-muted)]" />
         <div className="flex gap-1.5">
           {NEON_COLORS.map((color) => (
             <button
               key={color.value}
               onClick={() => setNeonColor(color.value)}
-              className={`w-6 h-6 rounded-full transition-all duration-200 hover:scale-110 ${
+              className={`h-5 w-5 rounded-full transition-all duration-200 hover:scale-110 ${
                 neonColor === color.value
-                  ? 'ring-2 ring-white ring-offset-2 ring-offset-transparent'
+                  ? 'ring-2 ring-white/90 ring-offset-2 ring-offset-transparent'
                   : ''
               }`}
               style={{ backgroundColor: color.value }}
@@ -28,20 +27,17 @@ export function ThemeToggle() {
         </div>
       </div>
 
-      {/* Theme Toggle */}
       <button
         onClick={toggleTheme}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.05] hover:bg-white/[0.10] transition-all duration-300"
+        className="flex items-center gap-2 rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-card)] px-3 py-2 text-sm font-medium text-[color:var(--color-text)] transition-colors duration-300 hover:bg-[color:var(--color-card-muted)]"
         aria-label={`Cambiar a modo ${theme === 'dark' ? 'claro' : 'oscuro'}`}
       >
         {theme === 'dark' ? (
-          <Sun className="w-5 h-5 text-yellow-400" />
+          <Sun className="h-4 w-4 text-yellow-400" />
         ) : (
-          <Moon className="w-5 h-5 text-gray-300" />
+          <Moon className="h-4 w-4 text-[color:var(--color-muted)]" />
         )}
-        <span className="text-sm text-gray-300">
-          {theme === 'dark' ? 'Claro' : 'Oscuro'}
-        </span>
+        <span>{theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}</span>
       </button>
     </div>
   );

@@ -1,16 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark-bg: #1a1425;
-  --color-dark-card: rgba(255, 255, 255, 0.05);
-  --color-dark-text: #ffffff;
-  --color-dark-muted: #9ca3af;
-
-  --color-light-bg: #f8fafc;
-  --color-light-card: rgba(0, 0, 0, 0.05);
-  --color-light-text: #1a1425;
-  --color-light-muted: #6b7280;
-
   --shadow-neon: 0 0 20px var(--neon-color);
   --shadow-neon-lg: 0 0 40px var(--neon-color);
 
@@ -21,20 +11,46 @@
 @layer base {
   :root {
     --neon-color: #a855f7;
+    --color-bg: #120f1c;
+    --color-bg-soft: #191428;
+    --color-card: rgba(20, 16, 30, 0.92);
+    --color-card-muted: rgba(255, 255, 255, 0.05);
+    --color-text: #f8fafc;
+    --color-muted: #a8b0c1;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-strong: rgba(255, 255, 255, 0.18);
+    color-scheme: dark;
+  }
+
+  html.light {
+    --color-bg: #eef2ff;
+    --color-bg-soft: #dbe4ff;
+    --color-card: rgba(255, 255, 255, 0.88);
+    --color-card-muted: rgba(255, 255, 255, 0.72);
+    --color-text: #111827;
+    --color-muted: #4b5563;
+    --color-border: rgba(17, 24, 39, 0.08);
+    --color-border-strong: rgba(17, 24, 39, 0.16);
+    color-scheme: light;
+  }
+
+  html {
+    background:
+      radial-gradient(circle at top, color-mix(in srgb, var(--neon-color) 18%, transparent) 0%, transparent 38%),
+      linear-gradient(180deg, var(--color-bg-soft) 0%, var(--color-bg) 48%, var(--color-bg) 100%);
   }
 
   body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: transparent;
   }
 
   #root {
     min-height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    width: 100%;
   }
 }
 
@@ -42,13 +58,16 @@
   .glass-card {
     position: relative;
     border-radius: var(--radius-glass);
-    background: rgba(255, 255, 255, 0.05);
+    background: color-mix(in srgb, var(--color-card) 92%, transparent);
     backdrop-filter: blur(var(--blur-glass));
-    border: 2px solid var(--neon-color);
-    box-shadow: var(--shadow-neon), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    border: 1px solid color-mix(in srgb, var(--neon-color) 45%, var(--color-border));
+    box-shadow:
+      0 24px 80px rgba(15, 23, 42, 0.28),
+      0 0 0 1px rgba(255, 255, 255, 0.02),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     width: 100%;
-    max-width: 64rem;
+    max-width: 78rem;
   }
 
   .carousel-container:hover .animate-carousel {
@@ -72,6 +91,6 @@
 
 .carousel-container {
   overflow: hidden;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   position: relative;
 }

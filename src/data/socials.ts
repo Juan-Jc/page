@@ -1,35 +1,36 @@
-import { type SocialLink } from "../types";
-import { Mail, Globe, Video, Gamepad2, AtSign } from "lucide-react";
+import { type SocialLink } from '../types';
+import { Mail, Github, Instagram, Linkedin } from 'lucide-react';
 
-// lucide-react doesn't have social brand icons in v1.8.0
-// Using generic icons that represent each platform
 export const socials: SocialLink[] = [
   {
-    platform: "github",
-    url: "https://github.com/Juan-Jc",
-    label: "GitHub",
+    platform: 'github',
+    url: 'https://github.com/Juan-Jc',
+    label: 'GitHub',
+    value: '@Juan-Jc',
   },
   {
-    platform: "instagram",
-    url: "http://www.instagram.com/jotacemusic",
-    label: "Instagram",
+    platform: 'linkedin',
+    url: 'https://www.linkedin.com/in/juancamilopuerta/',
+    label: 'LinkedIn',
+    value: 'Perfil profesional',
   },
   {
-    platform: "linkedin",
-    url: "https://www.linkedin.com/in/juancamilopuerta/",
-    label: "LinkedIn",
+    platform: 'email',
+    url: 'mailto:juan.puerta1994@gmail.com',
+    label: 'Email',
+    value: 'juan.puerta1994@gmail.com',
   },
   {
-    platform: "email",
-    url: "mailto:juan.puerta1994@gmail.com",
-    label: "Email",
+    platform: 'instagram',
+    url: 'https://www.instagram.com/jotacemusic',
+    label: 'Instagram',
+    value: '@jotacemusic',
   },
 ];
 
 export const socialIcons = {
-  github: Globe, // Using Globe as generic web icon
-  instagram: Video, // Using Video as visual content icon
-  linkedin: AtSign, // Using AtSign as professional network icon
-  twitch: Gamepad2, // Using Gamepad2 for gaming platform
+  github: Github,
+  instagram: Instagram,
+  linkedin: Linkedin,
   email: Mail,
 };

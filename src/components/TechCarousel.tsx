@@ -18,7 +18,7 @@ export function TechCarousel() {
               alt={tech.name}
               className="w-10 h-10 md:w-12 md:h-12 object-contain"
             />
-            <span className="text-xs text-gray-400">{tech.name}</span>
+            <span className="text-xs text-[color:var(--color-muted)]">{tech.name}</span>
           </div>
         ))}
       </div>

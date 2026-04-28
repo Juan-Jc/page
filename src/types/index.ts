@@ -3,15 +3,17 @@ export type Theme = 'dark' | 'light';
 export interface Project {
   name: string;
   description: string;
-  language: string;
-  stars: number;
+  stack: string[];
   url: string;
+  demoUrl?: string;
+  highlight: string;
 }
 
 export interface SocialLink {
-  platform: 'github' | 'instagram' | 'linkedin' | 'twitch' | 'email';
+  platform: 'github' | 'instagram' | 'linkedin' | 'email';
   url: string;
   label: string;
+  value: string;
 }
 
 export interface TechItem {
