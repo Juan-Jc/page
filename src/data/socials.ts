@@ -1,5 +1,6 @@
 import { type SocialLink } from '../types';
-import { Mail, Github, Instagram, Linkedin } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 
 export const socials: SocialLink[] = [
   {
@@ -29,8 +30,8 @@ export const socials: SocialLink[] = [
 ];
 
 export const socialIcons = {
-  github: Github,
-  instagram: Instagram,
-  linkedin: Linkedin,
+  github: FaGithub,
+  instagram: FaInstagram,
+  linkedin: FaLinkedinIn,
   email: Mail,
 };

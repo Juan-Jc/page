@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github } from 'lucide-react';
+import { ArrowUpRight, GitBranch } from 'lucide-react';
 import type { Project } from '../types';
 
 interface ProjectCardProps {
@@ -23,7 +23,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </h3>
         </div>
         <div className="rounded-full bg-[color:var(--color-card)] p-2 text-[color:var(--color-text)]">
-          <Github className="h-4 w-4" />
+          <GitBranch className="h-4 w-4" />
         </div>
       </div>
 
